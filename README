@@ -1,0 +1,58 @@
+Project Overview
+This project demonstrates data preprocessing, analysis, and training of a simple linear regression model on a dataset.
+The dataset contains information about employees, including their names, ages, salaries, and departments.
+The program processes this data by filling missing values, calculating mean values by department, encoding categorical data,
+and training a machine learning model to predict salaries based on other features.
+
+Features
+Fill Missing Values: Missing values in numeric columns (e.g., Age, Salary) are filled with the mean of the respective columns.
+Grouping by Department: The dataset is grouped by the Department column, and the mean of numeric columns is calculated for each department.
+Encoding Categorical Data: Categorical data in columns like Department and Name is encoded into numeric values.
+Model Training: A linear regression model is trained to predict salary based on other numeric columns in the dataset,
+and the model's performance is evaluated using Mean Squared Error (MSE).
+
+Example Output
+The script will output the following steps:
+
+Original Data: Display the input data with missing values and categorical columns.
+Filling Missing Values: It will fill the missing values with the mean of the respective columns.
+Grouping by Department: It will group the data by the Department column and calculate the mean of numeric columns for each department.
+Encoding Categorical Data: It will encode categorical columns into numeric values.
+Model Training: It will train a linear regression model and print the model’s Mean Squared Error (MSE).
+
+Environment Data:
+      Name   Age   Salary Department
+0    Alice  25.0  50000.0         HR
+1      Bob  30.0  60000.0         IT
+2  Charlie  35.0      NaN         IT
+3    David   NaN  80000.0         HR
+4      Eve  28.0  55000.0    Finance
+5    Frank  33.0  62000.0    Finance
+6    Grace  40.0  70000.0         IT
+7    Helen   NaN  75000.0         HR
+8     Ivan  45.0  85000.0    Finance
+9     Judy  50.0      NaN         IT
+
+Filling missing values with column means...
+Grouping by a column and calculating mean values...
+                  Age        Salary
+Department
+Finance     35.333333  67333.333333
+HR          32.166667  68333.333333
+IT          38.750000  66062.500000
+Encoding categorical data...
+Training a model on the data...
+Model trained. MSE: 1.62528690687745
+
+Final Processed Data:
+   Name   Age   Salary  Department
+0     0  25.00  50000.0           1
+1     1  30.00  60000.0           2
+2     2  35.00  67125.0           2
+3     3  35.75  80000.0           1
+4     4  28.00  55000.0           0
+5     5  33.00  62000.0           0
+6     6  40.00  70000.0           2
+7     7  35.75  75000.0           1
+8     8  45.00  85000.0           0
+9     9  50.00  67125.0           2
